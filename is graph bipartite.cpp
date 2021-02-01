@@ -1,3 +1,5 @@
+// using BFS method
+
 
   bool solve(vector<vector<int>>& graph,vector<int>& col,int v,vector<bool>& vis)
     {
