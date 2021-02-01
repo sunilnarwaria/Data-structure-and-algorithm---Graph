@@ -1,6 +1,6 @@
  
  //In DFS, we print a vertex and then recursively call DFS for its adjacent vertices. In topological sorting, we need to print a vertex before its adjacent vertices. 
-  
+  // *** in topological sorting atleast one vertex should have 0 degree
 // 210. course schedule II Leetcode
    
       bool isCyclic(int v, vector<int> &ans, vector<int> &vis, vector<vector<int>> &adj){
