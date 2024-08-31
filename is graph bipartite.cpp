@@ -1,3 +1,39 @@
+// DFS 
+
+class Solution {
+public:
+
+    bool dfs(int node,int colour, int col[], vector<vector<int>>& adj){
+
+        col[node] = colour;
+        for(auto it : adj[node]){
+            if(col[it] == -1){
+            if(dfs(it,!colour,col,adj) == false) return false;
+            }else if(col[it] == colour) return false;
+        }
+        return true;
+
+    }
+
+    bool isBipartite(vector<vector<int>>& graph) {
+        
+        int v = graph.size();
+        int col[v];
+        for(int i = 0;i<v;i++){
+            col[i] = -1;
+        }
+        for(int i = 0;i<v;i++){
+            
+            if(col[i] == -1){
+                if(dfs(i,0,col,graph) == false) return false;
+            }
+        }
+        return true;
+    }
+};
+
+
+
 // using BFS method
 
 
